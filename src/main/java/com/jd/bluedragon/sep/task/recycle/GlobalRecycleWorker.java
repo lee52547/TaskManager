@@ -34,7 +34,7 @@ public class GlobalRecycleWorker {
                 String token = taskManager.nextToken();
                 List<TaskFrame> tasks = taskManager.allUserTasks(token);
                 for(TaskFrame taskFrame : tasks) {
-                    if(taskFrame.isExpried()) {
+                    if(taskFrame.isExpired()) {
                         taskManager.recycle(taskFrame);
                     }
                 }

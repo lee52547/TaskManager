@@ -39,7 +39,7 @@ public class JsonSerializer implements TaskSerializer {
     private TaskFrame json2TF(String json, Class<? extends Task> clazz) { TaskFrame taskFrame = new TaskFrame();
         JSONObject jo = JSON.parseObject(json);
         taskFrame.setTime(jo.getLong("time"));
-        taskFrame.setStaffNo(jo.getInteger("staffNo"));
+        taskFrame.setUserId(jo.getInteger("staffNo"));
         taskFrame.setSrcQueue(jo.getString("srcQueue"));
         JSONArray jrr = jo.getJSONArray("data");
         List<Task> list = new ArrayList<Task>();

@@ -13,18 +13,18 @@ import java.util.List;
  */
 public class TaskFrame {
 
-    private Integer staffNo;
-    private Long time;
+    private Integer userId;
     private List<? extends Task> data;
+    private Long time;
     private String srcQueue;
     private String token;
 
-    public Integer getStaffNo() {
-        return staffNo;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setStaffNo(Integer staffNo) {
-        this.staffNo = staffNo;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Long getTime() {
@@ -52,7 +52,7 @@ public class TaskFrame {
     }
 
 
-    public boolean isExpried() {
+    public boolean isExpired() {
         return this.getTime() == null || System.currentTimeMillis() - this.getTime() > 1000 * 60 * 30;
     }
 

@@ -1,7 +1,6 @@
 package com.jd.bluedragon.sep.task.manager;
 
 import com.jd.bluedragon.sep.task.TaskConfig;
-import com.jd.bluedragon.sep.task.TaskHandler;
 import com.jd.bluedragon.sep.task.cache.TaskCache;
 import com.jd.bluedragon.sep.task.cache.TaskQueueAllocator;
 import com.jd.bluedragon.sep.task.service.TaskService;

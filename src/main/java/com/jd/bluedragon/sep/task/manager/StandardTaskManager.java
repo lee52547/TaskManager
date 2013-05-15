@@ -17,6 +17,9 @@ import java.util.*;
 public class StandardTaskManager extends TaskManager {
 
 
+
+
+
     @Override
     public long countTask(Task t) {
         TaskQueue<? extends Task> tq = new TaskQueue<Task>(this, t);
@@ -104,7 +107,7 @@ public class StandardTaskManager extends TaskManager {
     @Override
     public void recycle(TaskFrame taskFrame) {
         if(context.getTaskCache().isAvailable()) {
-            context.getTaskCache().deleteUserTask(taskFrame.getStaffNo(),this.getClazz());
+            context.getTaskCache().deleteUserTask(taskFrame.getUserId(),this.getClazz());
             context.getTaskCache().getQueue(taskFrame.getSrcQueue()).pushAll(taskFrame.getData());
         }
         if(context.getConfig().isStrictModel()) {

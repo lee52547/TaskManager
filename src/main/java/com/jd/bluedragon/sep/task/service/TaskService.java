@@ -1,7 +1,6 @@
 package com.jd.bluedragon.sep.task.service;
 
 import com.jd.bluedragon.sep.task.Task;
-import com.jd.bluedragon.sep.task.TaskFrame;
 
 import java.util.List;
 
@@ -38,29 +37,4 @@ public interface TaskService {
      */
     void addTask(Task t);
 
-    /**
-     * 检查列表中的任务是否已经完成
-     * @param data 任务列表
-     * @return 未完成的任务列表
-     */
-     List<? extends Task> getUnCompleted(List<? extends  Task> data);
-
-    /**
-     * 将任务拥有者锁定为指定用户 其他人不能获取
-     * @param userId 用户ID
-     * @param dataList 任务列表
-     */
-    void lockTasks(Integer userId, List<? extends Task> dataList);
-
-    /**
-     * 将任务解锁 使得其它用户能够获取到任务
-     * @param data 任务列表
-     */
-    void unlockTasks(List<? extends Task> data);
-
-    /**
-     * 放弃某一用户的当前任务
-     * @param userId  用户ID
-     */
-    void giveUpTasks(Integer userId);
 }

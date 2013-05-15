@@ -13,12 +13,10 @@ import com.jd.bluedragon.sep.task.manager.TaskManager;
 public class TaskCounter {
 
     private TaskManager taskManager;
-    private Task task;
     private String name;
 
     public TaskCounter(TaskManager taskManager, Task t) {
         this.taskManager = taskManager;
-        this.task = t;
         this.name = taskManager.getGen().getRQueueName(t);
     }
 

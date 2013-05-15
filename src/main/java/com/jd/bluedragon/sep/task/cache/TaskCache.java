@@ -117,7 +117,7 @@ public class TaskCache {
         TaskFrame task = new TaskFrame();
         task.setData(tasks);
         task.setSrcQueue(srcQueue);
-        task.setStaffNo(userId);
+        task.setUserId(userId);
         task.setTime(System.currentTimeMillis());
         return addUserTask(task);
     }
@@ -136,7 +136,7 @@ public class TaskCache {
             TaskFrame task = new TaskFrame();
             task.setData(tasks);
             task.setSrcQueue(srcQueue);
-            task.setStaffNo(userId);
+            task.setUserId(userId);
             task.setTime(System.currentTimeMillis());
             task.setToken(token);
             return task;
@@ -155,13 +155,13 @@ public class TaskCache {
      * @param task 任务对象
      */
     public TaskFrame addUserTask(TaskFrame task) {
-        if (task != null && task.getStaffNo() != null) {
+        if (task != null && task.getUserId() != null) {
             if (task.getToken() == null) {
                 task.setToken(taskManager.getToken());
             }
-            taskManager.getCacheClient().set(taskManager.getGen().getUserTaskKey(task.getStaffNo()), taskSerializer.serialize(task));
+            taskManager.getCacheClient().set(taskManager.getGen().getUserTaskKey(task.getUserId()), taskSerializer.serialize(task));
             CacheSet<Integer> set = taskManager.getCacheClient().getSet(task.getToken());
-            set.add(task.getStaffNo());
+            set.add(task.getUserId());
             return task;
         }
         return null;
